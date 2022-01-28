@@ -4,8 +4,6 @@ class Inverter
 {
 private:
     double current;
-
-private:
     double operatingVoltage;
 
 public:
@@ -13,38 +11,32 @@ public:
     {
     }
 
-public:
     Inverter(double current, double operatingVoltage)
     {
         this->current = current;
         this->operatingVoltage = operatingVoltage;
     }
 
-public:
     double getCurrent()
     {
         return current;
     }
 
-public:
     void setCurrent(double current)
     {
         this->current = current;
     }
 
-public:
     double getOperatingVoltage()
     {
         return operatingVoltage;
     }
 
-public:
     void setOperatingVoltage(double operatingVoltage)
     {
         this->operatingVoltage = operatingVoltage;
     }
 
-public:
     void getDetails()
     {
         double powerRating = current * operatingVoltage;
@@ -62,25 +54,21 @@ public:
     {
     }
 
-public:
     SolarPanel(double energyProduced)
     {
         this->energyProduced = energyProduced;
     }
 
-public:
     double getEnergyProduced()
     {
         return energyProduced;
     }
 
-public:
     void setEnergyProduced(double energyProduced)
     {
         this->energyProduced = energyProduced;
     }
 
-public:
     void getDetails()
     {
         cout << energyProduced;
@@ -98,24 +86,19 @@ public:
         return voltage;
     }
 
-public:
     void setVoltage(int voltage)
     {
         this->voltage = voltage;
     }
 
-public:
     Battery()
     {
     }
 
-public:
     Battery(int voltage)
     {
         this->voltage = voltage;
     }
-
-public:
     void getDetails()
     {
         cout << "This is " << voltage << " battery";
@@ -132,25 +115,21 @@ public:
     {
     }
 
-public:
     SolarInverter(double current, double operatingVoltage, SolarPanel solarPanel)
     {
         this->solarPanel = solarPanel;
     }
 
-public:
     SolarPanel getSolarPanel()
     {
         return solarPanel;
     }
 
-public:
     void setSolarPanel(SolarPanel solarPanel)
     {
         this->solarPanel = solarPanel;
     }
 
-public:
     void getDetails()
     {
         solarPanel.getDetails();
@@ -167,26 +146,22 @@ public:
     {
     }
 
-public:
     Zelio(double current, double operatingVoltage, Battery battery)
     {
 
         this->battery = battery;
     }
 
-public:
     Battery getBattery()
     {
         return battery;
     }
 
-public:
     void setBattery(Battery battery)
     {
         this->battery = battery;
     }
 
-public:
     void getDetails()
     {
         battery.getDetails();
@@ -203,26 +178,22 @@ public:
     {
     }
 
-public:
     ICruz(double current, double operatingVoltage, Battery battery)
     {
 
         this->battery = battery;
     }
 
-public:
     Battery getBattery()
     {
         return battery;
     }
 
-public:
     void setBattery(Battery battery)
     {
         this->battery = battery;
     }
 
-public:
     void getDetails()
     {
 
@@ -235,7 +206,6 @@ class PCU : public SolarInverter
 private:
     bool gridSystem = false;
 
-private:
     Battery battery;
 
 public:
@@ -243,26 +213,22 @@ public:
     {
     }
 
-public:
     PCU(double current, double operatingVoltage, SolarPanel solarPanel, Battery battery)
     {
 
         this->battery = battery;
     }
 
-public:
     Battery getBattery()
     {
         return battery;
     }
 
-public:
     void setBattery(Battery battery)
     {
         this->battery = battery;
     }
 
-public:
     void getDetails()
     {
 
@@ -279,13 +245,11 @@ public:
     {
     }
 
-public:
     Regalia(double current, double operatingVoltage, SolarPanel solarPanel)
     {
         //this->getOperatingVoltage;
     }
 
-public:
     void getDetails()
     {
         this->getDetails();
@@ -302,13 +266,11 @@ public:
     {
     }
 
-public:
     GTI(double current, double operatingVoltage, SolarPanel solarPanel)
     {
         //this->current;
     }
 
-public:
     void getDetails()
     {
 

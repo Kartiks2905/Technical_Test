@@ -1,80 +1,159 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 class Vehicle
 {
-protected:
-    string vehicleName;
-    string color;
-    string vehicleType;
-
-public:
-    void setVehicleName(string s)
-    {
-        vehicleName = s;
-    }
-
-    void setVehicleColor(string s)
-    {
-        color = s;
-    }
-
-    void setVehicleType(string s)
-    {
-        vehicleName = s;
-    }
-
-    string getVehicleType()
-    {
-        return vehicleType;
-    }
-
-    string getVehicleColor()
-    {
-        return color;
-    }
-
-    string getVehicleName()
-    {
-        return vehicleName;
-    }
+    virtual void run();
 };
-
-class Person
+class Car : public Vehicle
 {
-protected:
+private:
     string name;
-    Vehicle VehicleName;
-    Vehicle color;
-    Vehicle type;
+    string model;
+    string color;
+    int tyres = 4;
 
-public:
-    void setName(string s)
+    Car()
     {
-        name = s;
     }
 
+public:
     string getName()
     {
         return name;
     }
-    void getVehicle(Vehicle v)
+    void setName(string name)
     {
-        this->VehicleName = v;
+        this->name = name;
     }
-    void getVehicle(Vehicle c)
+
+    string getModel()
     {
-        this->color = c;
+        return model;
     }
-    void getVehicle(Vehicle type)
+    void setModel(string model)
     {
-        this->type = type;
+        this->model = model;
+    }
+    string getColor()
+    {
+        return color;
+    }
+
+    void setColor(string color)
+    {
+        this->color = color;
+    }
+    int getTyres()
+    {
+        return tyres;
+    }
+    void run()
+    {
+        cout << "Runs";
+    }
+    Car(string name, string model, string color)
+    {
+        this->name = name;
+        this->model = model;
+        this->color = color;
     }
 };
-
-int main()
+class Bike : public Vehicle
 {
+private:
+    string name;
+    string color;
+    string model;
+    int tyres = 2;
+    Bike()
+    {
+    }
 
-    Person p;
-    p.getName();
-    return 0;
-}
+public:
+    string getName()
+    {
+        return name;
+    }
+
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    string getColor()
+    {
+        return color;
+    }
+    void setColor(string color)
+    {
+        this->color = color;
+    }
+    string getModel()
+    {
+        return model;
+    }
+    void setModel(string model)
+    {
+        this->model = model;
+    }
+
+    int getTyres()
+    {
+        return tyres;
+    }
+    void run()
+    {
+        cout << "Runs at medium speed..";
+    }
+
+    Bike(string name, string model, string color)
+    {
+        this->name = name;
+        this->model = model;
+        this->color = color;
+    }
+};
+class Person
+{
+    string name;
+    string age;
+    vector<Vehicle> vehicles; // has a relationship
+    Person()
+    {
+    }
+
+public:
+    string getName()
+    {
+        return name;
+    }
+    void setName(string name)
+    {
+        this->name = name;
+    }
+    Person(string name, string age, vector<Vehicle> vehicles)
+    {
+        this->name = name;
+        this->age = age;
+        this->vehicles = vehicles;
+    }
+
+    string getAge()
+    {
+        return age;
+    }
+
+    void setAge(string age)
+    {
+        this->age = age;
+    }
+
+    vector<Vehicle> getVehicles()
+    {
+        return vehicles;
+    }
+    void setVehicles(vector<Vehicle> vehicles)
+    {
+        this->vehicles = vehicles;
+    }
+};
